@@ -1,0 +1,5 @@
+{
+  "name": "DynastyBuilder",
+  "description": "A dynamic, interactive family tree builder. Create lineage charts with editable nodes, spouse connections, and automatic layout handling.",
+  "requestFramePermissions": []
+}
