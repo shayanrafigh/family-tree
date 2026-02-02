@@ -44,25 +44,25 @@ export const PersonCard: React.FC<PersonCardProps> = ({
         <div className="flex items-start gap-3">
           <button 
             onClick={toggleGender}
-            className={`flex-shrink-0 w-8 h-8 rounded-full ${theme.iconBg} ${theme.iconColor} flex items-center justify-center transition-transform hover:scale-110 active:scale-95`}
+            className={`flex-shrink-0 w-8 h-8 rounded-full ${theme.iconBg} ${theme.iconColor} flex items-center justify-center transition-transform hover:scale-110 active:scale-95 cursor-pointer`}
             title="Toggle Gender"
           >
             <User size={16} strokeWidth={2.5} />
           </button>
           
-          <div className="flex-1 min-w-0 flex flex-col">
+          <div className="flex-1 min-w-0 flex flex-col group/inputs">
              <input
               type="text"
               value={person.title || ''}
               onChange={(e) => onChange({ title: e.target.value })}
               placeholder="Title"
-              className="w-full text-xs font-semibold text-slate-400 placeholder-slate-300 bg-transparent border-none p-0 focus:ring-0 mb-0.5 tracking-wide uppercase"
+              className="w-full text-xs font-semibold text-slate-400 placeholder-slate-300 bg-transparent border-b border-transparent hover:border-slate-200 focus:border-slate-300 p-0 focus:ring-0 mb-0.5 tracking-wide uppercase transition-colors"
             />
             <input
               type="text"
               value={person.name}
               onChange={(e) => onChange({ name: e.target.value })}
-              className="w-full text-base font-bold text-slate-800 bg-transparent border-none p-0 focus:ring-0 placeholder-slate-300 leading-tight"
+              className="w-full text-base font-bold text-slate-800 bg-transparent border-b border-transparent hover:border-slate-300 focus:border-slate-400 p-0 focus:ring-0 placeholder-slate-300 leading-tight transition-colors"
               placeholder="Name"
             />
           </div>
@@ -101,7 +101,7 @@ export const PersonCard: React.FC<PersonCardProps> = ({
             e.stopPropagation();
             onDelete?.();
           }}
-          className="absolute -top-1 -right-1 bg-white border border-slate-200 text-slate-400 p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all hover:bg-red-50 hover:text-red-500 hover:border-red-100 shadow-sm z-20"
+          className="absolute -top-1 -right-1 bg-white border border-slate-200 text-slate-400 p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all hover:bg-red-50 hover:text-red-500 hover:border-red-100 shadow-sm z-20 cursor-pointer"
           title="Remove Person"
         >
           <Trash2 size={12} />
